@@ -1,41 +1,55 @@
 {
     "valid": [
-      "+27831234567",
-      "0831234567",
-      "0612345678",
-      "+27761234567",
-      "0721234567",
-      "0622345678",
-      "+27651234567",
-      "0651234567",
-      "0632345678",
-      "+27021234567",
-      "0211234567",
-      "0312345678",
-      "+27101234567",
-      "0101234567",
-      "0112345678",
-      "+27991234567",
-      "0991234567",
-      "0192345678",
-      "+27551234567",
-      "0551234567"
+        "+27831234567",
+        "0831234567",
+        "0612345678",
+        "+27761234567",
+        "0721234567",
+        "0622345678",
+        "+27651234567",
+        "0651234567",
+        "0632345678",
+        "+27021234567",
+        "0211234567",
+        "0312345678",
+        "+27101234567",
+        "0101234567",
+        "0112345678",
+        "+27991234567",
+        "0991234567",
+        "0192345678",
+        "+27551234567",
+        "0551234567",
+        "+16471234567", // US number
+        "0401234567",   // Australian number
+        "+442071234567" // UK number
     ],
     "invalid": [
-      "+2712345678",
-      "07123456789",
-      "0912345678",
-      "<script>alert('XSS');</script>",
-      "' OR 1=1;--",
-      "1); DROP TABLE Users;--",
-      "javascript:alert('XSS');",
-      "'; DROP TABLE users;--",
-      "eval(String.fromCharCode(97, 108, 101, 114, 116, 40, 39, 88, 83, 83, 39, 41));",
-      "location.href='javascript:alert(1)';",
-      "confirm(String.fromCharCode(88, 83, 83));",
-      "prompt(1);",
-      "1; DROP TABLE users;",
-      "+1000000000",
-      "+27012345678901234567890"
+        "+2712345678",
+        "07123456789",
+        "0912345678",
+        "<script>alert('XSS');</script>",
+        "' OR 1=1;--",
+        "1); DROP TABLE Users;--",
+        "javascript:alert('XSS');",
+        "'; DROP TABLE users;--",
+        "eval(String.fromCharCode(97, 108, 101, 114, 116, 40, 39, 88, 83, 83, 39, 41));",
+        "location.href='javascript:alert(1)';",
+        "confirm(String.fromCharCode(88, 83, 83));",
+        "prompt(1);",
+        "1; DROP TABLE users;",
+        "+1000000000",
+        "+27012345678901234567890",
+        "abc1234567", // Non-numeric characters
+        "+123",       // Too short
+        "+123456789012345678901234567890", // Too long
+        "while(1);", // Infinite loop attempt
+        "JSON.parse('{}\"');", // JSON injection
+        "function(){}", // Function declaration
+        "console.log('Hello, world!');", // Console logging
+        "\\d+(\\.\\d+)?", // Regular expression Denial of Service (ReDoS) attempt
+        "(x+x+)+y", // Another ReDoS attempt
+        "jest.mock('module');", // Jest mocking command
+        "expect(foo).toHaveBeenCalledWith(bar);" // Jest expect assertion
     ]
-  }  
+}
