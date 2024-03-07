@@ -35,6 +35,6 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: test-report.html
+          name: index.html
           path: public
           retention-days: 30
