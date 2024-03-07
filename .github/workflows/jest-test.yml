@@ -1,0 +1,40 @@
+name: Jest Tests
+
+on:
+  push:
+    branches: 
+      - main
+      - master
+  pull_request:
+    branches: 
+      - main
+      - master
+  schedule:
+    - cron: '0 9,12,15 * * *' # This will trigger the workflow at 09:00, 12:00, and 15:00 every day.
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Jest tests
+        run: npm test
+
+      - name: Upload Jest report
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-report.html
+          path: test-result-report
+          retention-days: 30

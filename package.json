@@ -1,0 +1,30 @@
+{
+  "name": "unittest",
+  "version": "1.0.0",
+  "description": "unit tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "<rootDir>/node_modules/jest-html-reporter",
+        {
+          "pageTitle": "Test Report",
+          "outputPath": "./test-result-report/test-report.html"
+        }
+      ]
+    ]
+  }
+}
