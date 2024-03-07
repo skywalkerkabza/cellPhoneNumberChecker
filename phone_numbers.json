@@ -20,9 +20,9 @@
         "0192345678",
         "+27551234567",
         "0551234567",
-        "+16471234567", // US number
-        "0401234567",   // Australian number
-        "+442071234567" // UK number
+        "+16471234567", 
+        "0401234567",   
+        "+442071234567" 
     ],
     "invalid": [
         "+2712345678",
@@ -40,16 +40,16 @@
         "1; DROP TABLE users;",
         "+1000000000",
         "+27012345678901234567890",
-        "abc1234567", // Non-numeric characters
-        "+123",       // Too short
-        "+123456789012345678901234567890", // Too long
-        "while(1);", // Infinite loop attempt
-        "JSON.parse('{}\"');", // JSON injection
-        "function(){}", // Function declaration
-        "console.log('Hello, world!');", // Console logging
-        "\\d+(\\.\\d+)?", // Regular expression Denial of Service (ReDoS) attempt
-        "(x+x+)+y", // Another ReDoS attempt
-        "jest.mock('module');", // Jest mocking command
-        "expect(foo).toHaveBeenCalledWith(bar);" // Jest expect assertion
+        "abc1234567", 
+        "+123",       
+        "+123456789012345678901234567890",
+        "while(1);", 
+        "JSON.parse('{}\"');", 
+        "function(){}", 
+        "console.log('Hello, world!');", 
+        "\\d+(\\.\\d+)?", 
+        "(x+x+)+y", 
+        "jest.mock('module');", 
+        "expect(foo).toHaveBeenCalledWith(bar);" 
     ]
 }
