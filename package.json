@@ -22,7 +22,7 @@
         "<rootDir>/node_modules/jest-html-reporter",
         {
           "pageTitle": "Test Report",
-          "outputPath": "./test-result-report/test-report.html"
+          "outputPath": "./public/test-report.html"
         }
       ]
     ]
